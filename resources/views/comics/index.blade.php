@@ -10,6 +10,11 @@
 <h2>
     <div class="row">
         <table class="table">
+        <div class="mb-4">
+            <a href="{{ route('comics.create') }}" class="btn btn-success w-100 fs-5">
+                + Aggiungi
+            </a>
+        </div>
             <div class="thead">
                 <tr>
                     <th scope="col">#</th>
