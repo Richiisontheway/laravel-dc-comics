@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ComicsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,42 +13,22 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::resource('',ComicsController::class);
+// // Read
+// Route::get('/comics',[ComicsController::class, 'index'])->name('comics.index');
+// Route::get('/comics/{id}',[ComicsController::class, 'show'])->name('comics.show');
 
-Route::get('/', function () {
-    $firstName = 'Gino';
-    $lastName = 'Paoli';
+// //Create
+// // ::get per il recupero dati
+// Route::get('/comics/create',[ComicsController::class, 'create'])->name('comics.create');
+// //::post per la creazione dei dati
+// Route::post('/comics/add',[ComicsController::class, 'store'])->name('comics.store');
 
-    /*
-        compact: crea un array associativo le cui chiavi sono le stringhe
-                 che mettiamo tra le parentesi, mentre i valori di tali
-                 chiavi sono i valori delle variabili con i nomi corrispondenti
-                 alle stringhe inserite
+// // Update
+// Route::get('/comics/{id}/update',[ComicsController::class, 'edit'])->name('comics.edit');
+// Route::put('/comics/{request}/{id}/update',[ComicsController::class, 'update'])->name('comics.update');
 
-        compact('firstName', 'lastName')
-         |                                     |
-         V                                     V
-
-         [
-            'firstName' => $firstName,
-            'lastName' => $lastName,
-         ]
-    */
-
-    /*
-        dd: vuol dire dump and die, cioè fai il var_dump (più carino però)
-            e poi stoppa l'esecuzione
-    */
-    // dd(compact('firstName', 'lastName'));
-
-    return view('welcome', [
-        'firstName' => $firstName,
-        'lastName' => $lastName,
-    ]);
-    // return view('welcome', compact('firstName', 'lastName'));
-});
-
-Route::get('/chi-siamo', function () {
-    return view('subpages.about');
-});
+// // delete
+// Route::delete('comics/{id}/delete',[ComicsController::class, 'destroy'])->name('comics.destroy');
 
 // Route::get(PERCORSO CON CUI ARRIVARE ALLA PAGINA, FUNZIONE DI CALLBACK CHE MI CREA LA RISPOSTA DA DARE ALL UTENTE)
