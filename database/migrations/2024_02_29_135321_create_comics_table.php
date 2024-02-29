@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('comics', function (Blueprint $table) {
             $table->id();
             $table->string('title',64)->nullable();
-            $table->string('description',230)->nullable();
+            $table->string('description',2000)->nullable();
             $table->string('thumb',1024)->nullable();
-            $table->decimal('price',5,2)->nullable();
+            $table->decimal('price',4,2)->nullable();
             $table->string('series');
             $table->date('sale_date')->nullable();
             $table->string('type');
