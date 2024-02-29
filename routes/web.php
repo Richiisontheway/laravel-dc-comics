@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::resource('',ComicsController::class);
+Route::resource('comics',ComicsController::class);
 // // Read
 // Route::get('/comics',[ComicsController::class, 'index'])->name('comics.index');
 // Route::get('/comics/{id}',[ComicsController::class, 'show'])->name('comics.show');
