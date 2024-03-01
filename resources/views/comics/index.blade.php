@@ -26,6 +26,7 @@
                     <th scope="col">Tipo</th>
                     {{-- <th scope="col">Artisti</th> --}}
                     {{-- <th scope="col">Scrittori</th> --}}
+                    <th scoper='col'>button</th>
                 </tr>
             </div>
             <div class="tbody">
@@ -46,7 +47,10 @@
                         {{-- <td>{{$comic->writers}}</td> --}}
                         <td>
                             <a href="{{ route('comics.show', ['comic'=> $comic->id]) }}" class="btn btn-primary">Vai a</a>
+                            <a href="{{ route('comics.edit', ['comic'=> $comic->id]) }}" class="btn btn-warning">Modifica</a>
+
                         </td>
+                        
                     </tr>
                     
                 @endforeach
