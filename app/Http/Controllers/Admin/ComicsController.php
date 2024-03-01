@@ -17,6 +17,7 @@ class ComicsController extends Controller
         //mi restituisce tutto ciò che c'è nella tabella collegata al model
         $comics = Comic::all();
         return view('comics.index', compact('comics'));
+        
     }
 
     /**
@@ -61,7 +62,7 @@ class ComicsController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        
     }
 
     /**
