@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 //models
 use App\Models\Comic;
+//request
+use App\Http\Requests\Request\UpdateComicRequest;
+use App\Http\Requests\Request\StoreComicRequest;
 class ComicsController extends Controller
 {
     /**
@@ -31,9 +34,10 @@ class ComicsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreComicRequest $request)
     {
-        $comics_data = $request->all();
+        $validatedData = $request->validated();
+        $comics_data = $validatedData->all();
         $comic = new Comic();
         $comic->title = $comics_data['title'];
         $comic->description = $comics_data['description'];
@@ -68,14 +72,14 @@ class ComicsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Comic $comic)
+    public function update(UpdateComicRequest $request, Comic $comic)
     {
-    
-        $comicsData = $request->all();
+        $validatedData = $request->validated();
+        // $comicsData = $validatedData->all();
 
         // TODO: valido i dati, ma lo faremo in futuro
 
-        $comic->update($comicsData);
+        $comic->update($validatedData);
 
         
 
